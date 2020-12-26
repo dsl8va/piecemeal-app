@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Collapse, Row } from "react-bootstrap";
+import { Collapse, Row } from "react-bootstrap";
 
 export default function CollapseDetailDiet({ diet, definition }) {
   const [open, setOpen] = useState(false);

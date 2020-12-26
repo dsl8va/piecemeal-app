@@ -1,6 +1,5 @@
 import React from 'react';
-import { Container, CardDeck } from 'react-bootstrap';
-import CardTemplate from './Card';
+import { Container } from 'react-bootstrap';
 import Jumbo from './Jumbo';
 import CollapseDetail from './CollapseDetail';
 
