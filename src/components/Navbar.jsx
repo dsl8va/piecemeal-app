@@ -5,23 +5,40 @@ import {
   Form, Nav, Navbar, NavDropdown, Row,
 } from 'react-bootstrap';
 
-export default function NavBar() {
-  // const [search, setSearch] = useState('');
-
+export default function NavBar({setHome, setAbout, setCustom, setResults}) {
 
   const handleClick = () => {
     const search = document.getElementById('query').value;
     console.log('search:', search);
   };
 
+  const renderHome = () => {
+    setHome(true);
+    setAbout(false);
+    setCustom(false);
+    setResults(false);
+  }
+  const renderAbout = () => {
+    setHome(false);
+    setAbout(true);
+    setCustom(false);
+    setResults(false);
+  }
+  const renderCustom = () => {
+    setHome(false);
+    setAbout(false);
+    setCustom(true);
+    setResults(false);
+  }
+
   return (
 
      <Navbar className="mb-3" bg="primary" variant="dark" sticky="top">
-        <Navbar.Brand href="#home"><h2><b>Piecemeal</b></h2></Navbar.Brand>
+        <Navbar.Brand onClick={renderHome} href="#home"><h2><b>Piecemeal</b></h2></Navbar.Brand>
         <Nav className="mr-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#about">About</Nav.Link>
-          <Nav.Link href="#custom">Custom Search</Nav.Link>
+          <Nav.Link onClick={renderHome} href="#home">Home</Nav.Link>
+          <Nav.Link onClick={renderAbout} href="#about">About</Nav.Link>
+          <Nav.Link onClick={renderCustom} href="#custom">Custom Search</Nav.Link>
         </Nav>
         <Form inline>
           <FormControl type="text" placeholder="Search" className="mr-sm-2" />

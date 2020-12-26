@@ -12,8 +12,8 @@ export default function App() {
   return (
     <>
       <Navbar setHome={setHome} setAbout={setAbout} setCustom={setCustom} setResults={setResults}/>
-      <Home />
-      <About />
+      {home && <Home />}
+      {about && <About />}
     </>
   );
 }
